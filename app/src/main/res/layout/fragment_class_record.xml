@@ -1,0 +1,49 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.ujjwol.myapplication.ClassRecordFragment">
+
+
+    <TextView
+        android:id="@+id/tv_class_record"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:fontFamily="monospace"
+        android:gravity="center_horizontal"
+        android:padding="10dp"
+        android:text="@string/class_record"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+
+        tools:targetApi="jelly_bean"
+        android:layout_marginStart="@dimen/activity_horizontal_margin" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_class_record"
+        android:layout_centerHorizontal="true"
+        android:drawableLeft="@drawable/ic_class_today_24dp"
+        android:drawableStart="@drawable/ic_class_today_24dp"
+        android:hint="@string/select_a_date" />
+
+    <ListView
+        android:id="@+id/classListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/tv_class_record"
+        android:layout_alignStart="@+id/tv_class_record"
+        android:layout_below="@id/tv_date"
+
+        android:alwaysDrawnWithCache="false"
+        />
+</RelativeLayout>
