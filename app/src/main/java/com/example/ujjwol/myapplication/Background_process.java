@@ -41,6 +41,7 @@ public class Background_process extends AsyncTask <String,Void,String>{
         Log.d("ujjwoldebugok0",":okayresult");
         if(type.equals("login")){
             try{
+                
                 String rollno=params[1];
                 String password=params[2];
                 URL url=new URL(login_url);

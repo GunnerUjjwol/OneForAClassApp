@@ -11,6 +11,7 @@ public class Notification_data {
     private String content;
 
     public Notification_data(int id, String title, String content) {
+
         this.id = id;
         this.title = title;
         this.content = content;
