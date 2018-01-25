@@ -1,14 +1,12 @@
 package com.example.ujjwol.myapplication.fragments;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -21,7 +19,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.ujjwol.myapplication.fragments.ClassRecordList;
+import com.example.ujjwol.myapplication.ClassRecordList;
 import com.example.ujjwol.myapplication.R;
 
 import org.json.JSONException;
@@ -35,8 +33,6 @@ import java.util.List;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-
-import com.example.ujjwol.myapplication.R;
 
 
 public class ClassRecordFragment extends Fragment {

@@ -6,27 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.ujjwol.myapplication.HomeActivity">
-<RelativeLayout
-    android:id="@+id/fragment_view"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_above="@id/navigation">
 
 
-</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/fragment_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/navigation"
+
+        >
 
 
-
-
-
+    </RelativeLayout>
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@id/fragment_view"
+
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@id/fragment_view"
+
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

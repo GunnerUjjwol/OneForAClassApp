@@ -1,7 +1,6 @@
 package com.example.ujjwol.myapplication;
 
 import android.content.Intent;
-import android.graphics.drawable.GradientDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +10,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
@@ -96,41 +94,41 @@ public class NotificationsActivity extends AppCompatActivity {
 
     private void load_data_from_server(int id) {
 
-         Background_notification_process task=new Background_notification_process();
+        Background_notification_process task=new Background_notification_process();
 
-         task.execute(id);
+        task.execute(id);
     }
-        class Background_notification_process extends AsyncTask<Integer,Void,Void>{
-    @Override
+    class Background_notification_process extends AsyncTask<Integer,Void,Void>{
+        @Override
         protected Void doInBackground(Integer... integers) {
-        int id=integers[0];
-        OkHttpClient client= new OkHttpClient();
-        String urlString="http://192.168.0.106/myapp/notification_load.php?id="+id;
-        Request request= new Request.Builder().url(urlString).build();
-        try {
-            Response response = client.newCall(request).execute();
-            JSONArray array= new JSONArray(response.body().string());
-            for (int i=0; i<array.length();i++){
-                JSONObject object= array.getJSONObject(i);
-                Notification_data data=new Notification_data(object.getInt("id"),object.getString("title"),object.getString("content"));
-                data_list.add(data);
+            int id=integers[0];
+            OkHttpClient client= new OkHttpClient();
+            String urlString="http://192.168.0.106/myapp/notification_load.php?id="+id;
+            Request request= new Request.Builder().url(urlString).build();
+            try {
+                Response response = client.newCall(request).execute();
+                JSONArray array= new JSONArray(response.body().string());
+                for (int i=0; i<array.length();i++){
+                    JSONObject object= array.getJSONObject(i);
+                    Notification_data data=new Notification_data(object.getInt("id"),object.getString("title"),object.getString("content"));
+                    data_list.add(data);
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                Log.v("endofContent","End of Content");
+
             }
 
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (JSONException e) {
-            Log.v("endofContent","End of Content");
-
+            return null;
         }
 
-
-        return null;
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            adapter.notifyDataSetChanged();
+        }
     }
-
-    @Override
-    protected void onPostExecute(Void aVoid) {
-        adapter.notifyDataSetChanged();
-    }
-}
 }
