@@ -1,4 +1,4 @@
-package com.example.ujjwol.myapplication;
+package com.example.ujjwol.myapplication.fragments;
 
 /**
  * Created by ujjwol on 12/30/2017.

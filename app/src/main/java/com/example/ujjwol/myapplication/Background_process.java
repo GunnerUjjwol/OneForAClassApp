@@ -41,7 +41,7 @@ public class Background_process extends AsyncTask <String,Void,String>{
         Log.d("ujjwoldebugok0",":okayresult");
         if(type.equals("login")){
             try{
-                
+
                 String rollno=params[1];
                 String password=params[2];
                 URL url=new URL(login_url);
@@ -99,6 +99,7 @@ public class Background_process extends AsyncTask <String,Void,String>{
     @Override
     protected void onPreExecute() {
         alertDialog=new AlertDialog.Builder(context).create();
+        alertDialog.setIcon(R.drawable.ic_error_black_24dp);
         alertDialog.setTitle("Login Status");
 
     }
