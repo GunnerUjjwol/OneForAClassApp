@@ -3,12 +3,13 @@
     <string name="title_activity_login">Sign in</string>
 
     <!-- Strings related to login -->
+    <string name="webUrl">http://10.20.0.2/myapp/</string>
     <string name="prompt_roll">Roll no.</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
+    <string name="title_profile">Profile</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_home">HomeActivity</string>
     <string name="class_record">Class Record</string>
@@ -17,5 +18,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="suggestions">Suggestions</string>
+    <string name="course_feedback">Course FeedBack</string>
 
 </resources>

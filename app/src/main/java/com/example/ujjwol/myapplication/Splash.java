@@ -18,6 +18,12 @@ public class Splash extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        if(SharedPrefManager.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(this, HomeActivity.class));
+            return;
+        }
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {

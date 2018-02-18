@@ -2,15 +2,19 @@ package com.example.ujjwol.myapplication;
 
 /**
  * Created by ujjwol on 12/21/2017.
+ * Background process for login authentication using OKHTTP,
+ * the same authentication using HTTPURLConnection can be found in Background_process.java
  */
 
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.util.Log;
+import android.widget.Spinner;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -31,6 +35,7 @@ public class Background_process extends AsyncTask <String,Void,String>{
     Context context;
     private AlertDialog alertDialog;
     private String type;
+   
     Background_process(Context ctx){
         context=ctx;
     }

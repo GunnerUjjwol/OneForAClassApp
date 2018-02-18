@@ -20,13 +20,15 @@
         android:textAlignment="center"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
-        android:textSize="18sp"
+        android:textSize="26sp"
         android:textStyle="bold"
         tools:targetApi="jelly_bean"
         android:layout_marginStart="@dimen/activity_horizontal_margin" />
 
     <TextView
         android:id="@+id/tv_date"
+        android:textSize="15sp"
+        android:layout_margin="8dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_class_record"
@@ -37,17 +39,13 @@
 
     <ListView
         android:id="@+id/classListView"
+        android:background="@color/colorbackground"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/tv_class_record"
         android:layout_alignLeft="@+id/tv_class_record"
-        android:layout_alignRight="@+id/tv_class_record"
         android:layout_alignStart="@+id/tv_class_record"
         android:layout_below="@+id/tv_date"
-        android:layout_centerHorizontal="true"
-        android:layout_centerInParent="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="52dp"
         android:alwaysDrawnWithCache="true"
         android:foregroundGravity="center_vertical"
         android:paddingLeft="5dp"

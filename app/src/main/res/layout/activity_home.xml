@@ -12,7 +12,7 @@
         android:id="@+id/fragment_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/navigation"
+        android:layout_above="@id/navigation"
 
         >
 
@@ -27,6 +27,7 @@
         android:layout_alignParentBottom="true"
 
         android:background="?android:attr/windowBackground"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

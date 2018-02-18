@@ -1,6 +1,7 @@
 package com.example.ujjwol.myapplication;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 
 import com.example.ujjwol.myapplication.fragments.ClassRecordFragment;
 import com.example.ujjwol.myapplication.fragments.NotificationFragment;
+import com.example.ujjwol.myapplication.fragments.ProfileFragment;
+import com.example.ujjwol.myapplication.fragments.SuggestionFragment;
 
 
 public class HomeActivity extends AppCompatActivity{
@@ -44,17 +47,28 @@ public class HomeActivity extends AppCompatActivity{
                     transaction1.commit();
 
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_suggestions:
+                    SuggestionFragment suggestionFragment= SuggestionFragment.newInstance();
 
-                    Toast.makeText(HomeActivity.this, "Dashboard Selected, Implementaion due",Toast.LENGTH_SHORT).show();
+                    /*FragmentTransaction transaction2=fragmentManager.beginTransaction();*/
+                    transaction1.replace(R.id.fragment_view,suggestionFragment);
+                    transaction1.addToBackStack(null);
+                    transaction1.commit();
+
+                    return true;
+                case R.id.navigation_profile:
+                    ProfileFragment profileFragment= ProfileFragment.newInstance();
+                    transaction1.replace(R.id.fragment_view,profileFragment);
+                    transaction1.addToBackStack(null);
+                    transaction1.commit();
+
+
                     return true;
 
                 case R.id.navigation_coursefeedback:
                     Toast.makeText(HomeActivity.this, "Course Feedback Selected, Implementaion due",Toast.LENGTH_SHORT).show();
                     return true;
-                case R.id.navigation_suggestions:
-                    Toast.makeText(HomeActivity.this, "Suggestions Selected, Implementaion due",Toast.LENGTH_SHORT).show();
-                    return true;
+
             }
 
             return false;
@@ -66,10 +80,16 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        if(!SharedPrefManager.getInstance(this).isLoggedIn()){
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+        }
+
+
        android.app.FragmentManager fragmentManager=getFragmentManager();
-        ClassRecordFragment classRecordFragment=ClassRecordFragment.newInstance();
+        ProfileFragment profileFragment=ProfileFragment.newInstance();
         FragmentTransaction transaction1=fragmentManager.beginTransaction();
-        transaction1.add(R.id.fragment_view,classRecordFragment);
+        transaction1.add(R.id.fragment_view,profileFragment);
         transaction1.addToBackStack(null);
         transaction1.commit();
 

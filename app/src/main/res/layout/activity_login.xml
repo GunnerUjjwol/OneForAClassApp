@@ -100,6 +100,7 @@
         android:shadowDx="30"
         android:shadowDy="30"
         android:shadowRadius="30"
+
         android:text="@string/action_sign_in"
         android:textAlignment="center"
         android:textStyle="bold" />

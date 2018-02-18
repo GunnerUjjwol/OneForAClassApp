@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tv_suggester"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:paddingBottom="0dp"
+        android:paddingLeft="10dp"
+
+        android:paddingTop="5dp"
+        android:text="suggester:"
+        android:textStyle="italic"
+        app:layout_constraintTop_toBottomOf="@id/tv_suggestions"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        card_view:cardBackgroundColor="@android:color/holo_blue_light"
+
+        card_view:cardCornerRadius="24dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:contentPadding="5dp"
+        card_view:layout_constraintEnd_toEndOf="parent"
+        card_view:layout_constraintHorizontal_bias="0.0"
+        card_view:layout_constraintStart_toStartOf="parent"
+        card_view:layout_constraintTop_toBottomOf="@id/tv_suggester">
+
+        <TextView
+            android:id="@+id/suggestion_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+
+            android:padding="10dp"
+
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/suggestion_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
